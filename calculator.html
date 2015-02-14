@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<input type="text" name="result" ID="number1">
+<select id="selectOptioin">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select>
+<input type="text" name="result" ID="number2">
+<button onclick="getResult()">Show</button>
+
+<script type="text/javascript">
+    function getResult () {
+        var number1 = document.getElementById('number1').value;
+        var number2 = document.getElementById('number2').value;
+
+        var select1 = document.getElementById('selectOptioin')
+
+        var operator = select1.options[select1.selectedIndex].value;
+        console.log(number1);
+        console.log(number2);
+        console.log(operator);
+
+        if (operator =='+'){
+            add(number1,number2);
+        }
+        if (operator =='-'){
+            subst(number1,number2);
+        }
+        if (operator =='*'){
+            multi(number1,number2);
+        }
+        if (operator =='/'){
+            devide(number1,number2);
+        }
+    }
+    function add(number1,number2) {
+        result=+number1+ +number2;
+        alert(result);
+    }
+    function subst(number1,number2) {
+        if(number1>number2){
+            result=number1-number2;}
+        else{
+            result=number2-number1;
+        }
+        alert(result);
+    }
+    function multi(number1,number2) {
+        result=number1*number2;
+        alert(result);
+    }
+    function devide(number1,number2) {
+        if(number1>number2){
+            result=number1/number2;}
+        else{
+            result=number2/number1;
+        }
+        alert(result);
+    }
+
+</script>
+
+</body>
+</html>
